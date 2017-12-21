@@ -1,7 +1,7 @@
 // vga_char_display.v  
 `timescale 1ns / 1ps  
   
-module display_char (  
+module IO_display (  
     input clk,  
     input rst,  
     output reg [3:0] r,  
@@ -90,14 +90,14 @@ module display_char (
     reg [127:0] ram [44:0];
   
     initial begin
-        $readmemh("F:/digital/system/system.srcs/mem.txt", ram, 0, 44);
+        $readmemh("D://mem.txt", ram, 0, 44);
     end
     
    reg [7:0] reginfo [319:0];  
      
      reg [7:0] d2n [15:0];
      initial begin
-        $readmemh("F:/digital/system/system.srcs/d2n.txt", d2n, 0, 15);
+        $readmemh("D://d2n.txt", d2n, 0, 15);
     end
 
      always @ (pc,inst,r1,r2,r3,r4,r5,r6,r7,r8,r9,r10,r11,r12,r13,r14,r15,r16) begin
