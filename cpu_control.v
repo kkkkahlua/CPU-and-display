@@ -1,4 +1,25 @@
-module sccu_dataflow(op, func, z, wmem, wreg, regrt, m2reg, aluc, shift,
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 2017/12/10 19:40:44
+// Design Name: 
+// Module Name: sccu_dataflow
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+module cpu_control(op, func, z, wmem, wreg, regrt, m2reg, aluc, shift,
 					aluimm, pcsource, jal, sext);
 	input [5:0] op, func;
 	input z;
@@ -44,3 +65,4 @@ module sccu_dataflow(op, func, z, wmem, wreg, regrt, m2reg, aluc, shift,
 	assign pcsource[0]	= i_beq&z | i_bne&~z | i_j | i_jal;
 	
 endmodule
+
